@@ -23,6 +23,9 @@
 		1C68CB472A60287A0093DDEB /* IngredientsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB462A60287A0093DDEB /* IngredientsEntity.swift */; };
 		1C68CB4B2A603BBA0093DDEB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB4A2A603BBA0093DDEB /* API.swift */; };
 		1C68CB502A6043700093DDEB /* BeerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB4F2A6043700093DDEB /* BeerPreview.swift */; };
+		1C68CB522A6067D50093DDEB /* BeerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB512A6067D50093DDEB /* BeerDetail.swift */; };
+		1C68CB542A606FA60093DDEB /* BeerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB532A606FA60093DDEB /* BeerList.swift */; };
+		1C68CB582A6070250093DDEB /* BeerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB572A6070250093DDEB /* BeerListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		1C68CB462A60287A0093DDEB /* IngredientsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsEntity.swift; sourceTree = "<group>"; };
 		1C68CB4A2A603BBA0093DDEB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		1C68CB4F2A6043700093DDEB /* BeerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerPreview.swift; sourceTree = "<group>"; };
+		1C68CB512A6067D50093DDEB /* BeerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetail.swift; sourceTree = "<group>"; };
+		1C68CB532A606FA60093DDEB /* BeerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerList.swift; sourceTree = "<group>"; };
+		1C68CB572A6070250093DDEB /* BeerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +190,9 @@
 			children = (
 				1C68CB102A60108F0093DDEB /* ContentView.swift */,
 				1C68CB4F2A6043700093DDEB /* BeerPreview.swift */,
+				1C68CB532A606FA60093DDEB /* BeerList.swift */,
+				1C68CB512A6067D50093DDEB /* BeerDetail.swift */,
+				1C68CB572A6070250093DDEB /* BeerListViewModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -326,6 +335,9 @@
 				1C68CB4B2A603BBA0093DDEB /* API.swift in Sources */,
 				1C68CB112A60108F0093DDEB /* ContentView.swift in Sources */,
 				1C68CB3D2A6020D20093DDEB /* BeerEntity.swift in Sources */,
+				1C68CB582A6070250093DDEB /* BeerListViewModel.swift in Sources */,
+				1C68CB522A6067D50093DDEB /* BeerDetail.swift in Sources */,
+				1C68CB542A606FA60093DDEB /* BeerList.swift in Sources */,
 				1C68CB3F2A6024990093DDEB /* VolumeEntity.swift in Sources */,
 				1C68CB472A60287A0093DDEB /* IngredientsEntity.swift in Sources */,
 				1C68CB0C2A60108F0093DDEB /* Persistence.swift in Sources */,

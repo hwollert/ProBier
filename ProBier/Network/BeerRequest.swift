@@ -8,13 +8,15 @@
 import Foundation
 
 struct BeerRequest {
-    func getAllBeer() async throws {
+    func getAllBeer() async throws -> [BeerEntity] {
         guard let url = Punk.random() else { fatalError("Missing URL") }
-                let urlRequest = URLRequest(url: url)
-                let (data, response) = try await URLSession.shared.data(for: urlRequest)
-
-                guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Error while fetching data") }
-                let decodedBeer = try JSONDecoder().decode([BeerEntity].self, from: data)
-            print("Async decodedFood", decodedBeer)
+        let urlRequest = URLRequest(url: url)
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        
+        let statusCode = (response as? HTTPURLResponse)?.statusCode
+        guard statusCode == 200 else { fatalError("Error while fetching data \(statusCode)") }
+        let decodedBeer = try JSONDecoder().decode([BeerEntity].self, from: data)
+        print("Async decodedFood", decodedBeer)
+        return decodedBeer
     }
 }
