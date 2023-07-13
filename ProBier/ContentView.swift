@@ -42,6 +42,15 @@ struct ContentView: View {
             }
             Text("Select an item")
         }
+        .onAppear {
+            Task {
+                do {
+                    try await BeerAPI().getAllBeer()
+                } catch let error {
+                    print("await error \(error)")
+                }
+            }
+        }
     }
 
     private func addItem() {
