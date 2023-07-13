@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct BeerAPI {
+struct BeerRequest {
     func getAllBeer() async throws {
-        guard let url = URL(string: "https://api.punkapi.com/v2/beers/random") else { fatalError("Missing URL") }
+        guard let url = Punk.random() else { fatalError("Missing URL") }
                 let urlRequest = URLRequest(url: url)
                 let (data, response) = try await URLSession.shared.data(for: urlRequest)
 

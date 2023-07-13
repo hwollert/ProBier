@@ -12,7 +12,7 @@ enum Kind: String, Codable {
     case grams
 }
 
-struct Volume: Decodable {
+struct VolumeEntity: Decodable {
     var value: Double?
     var unit: String?
 }

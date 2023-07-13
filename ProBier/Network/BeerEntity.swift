@@ -20,10 +20,10 @@ struct BeerEntity: Decodable {
     var srm: Double?
     var ph: Double?
     var attenuataion_level: Double?
-    var volume: Volume
-    var boil_volume: Volume
-    var method: Method
-    var ingredients: Ingredients
+    var volume: VolumeEntity
+    var boil_volume: VolumeEntity
+    var method: MethodEntity
+    var ingredients: IngredientsEntity
     var food_pairing: [String]
     var brewers_tips: String
     var contributed_by: String
