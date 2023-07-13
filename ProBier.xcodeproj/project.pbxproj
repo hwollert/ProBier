@@ -22,6 +22,7 @@
 		1C68CB452A6027940093DDEB /* MethodEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB442A6027940093DDEB /* MethodEntity.swift */; };
 		1C68CB472A60287A0093DDEB /* IngredientsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB462A60287A0093DDEB /* IngredientsEntity.swift */; };
 		1C68CB4B2A603BBA0093DDEB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB4A2A603BBA0093DDEB /* API.swift */; };
+		1C68CB502A6043700093DDEB /* BeerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB4F2A6043700093DDEB /* BeerPreview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		1C68CB442A6027940093DDEB /* MethodEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodEntity.swift; sourceTree = "<group>"; };
 		1C68CB462A60287A0093DDEB /* IngredientsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsEntity.swift; sourceTree = "<group>"; };
 		1C68CB4A2A603BBA0093DDEB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		1C68CB4F2A6043700093DDEB /* BeerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerPreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,11 +113,11 @@
 		1C68CB082A60108F0093DDEB /* ProBier */ = {
 			isa = PBXGroup;
 			children = (
+				1C68CB4C2A60432A0093DDEB /* View */,
 				1C68CB482A6039190093DDEB /* Data */,
 				1C68CB392A601FA70093DDEB /* Network */,
 				1C68CB092A60108F0093DDEB /* ProBierApp.swift */,
 				1C68CB0B2A60108F0093DDEB /* Persistence.swift */,
-				1C68CB102A60108F0093DDEB /* ContentView.swift */,
 				1C68CB122A6010900093DDEB /* Assets.xcassets */,
 				1C68CB142A6010900093DDEB /* ProBier.entitlements */,
 				1C68CB152A6010900093DDEB /* Preview Content */,
@@ -175,6 +177,15 @@
 				1C68CB0D2A60108F0093DDEB /* ProBier.xcdatamodeld */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1C68CB4C2A60432A0093DDEB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1C68CB102A60108F0093DDEB /* ContentView.swift */,
+				1C68CB4F2A6043700093DDEB /* BeerPreview.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +321,7 @@
 				1C68CB452A6027940093DDEB /* MethodEntity.swift in Sources */,
 				1C68CB0F2A60108F0093DDEB /* ProBier.xcdatamodeld in Sources */,
 				1C68CB3B2A601FF80093DDEB /* BeerRequest.swift in Sources */,
+				1C68CB502A6043700093DDEB /* BeerPreview.swift in Sources */,
 				1C68CB0A2A60108F0093DDEB /* ProBierApp.swift in Sources */,
 				1C68CB4B2A603BBA0093DDEB /* API.swift in Sources */,
 				1C68CB112A60108F0093DDEB /* ContentView.swift in Sources */,
