@@ -45,7 +45,7 @@ struct ContentView: View {
         .onAppear {
             Task {
                 do {
-                    try await BeerRequest().getAllBeer()
+                    try await BeerRequest().getAllBeer(pageNumber: 1)
                 } catch let error {
                     print("await error \(error)")
                 }

@@ -20,7 +20,9 @@ enum Punk: API {
     }
     
     static func getPage(number: Int) -> URL? {
-        baseUrl?.appendingPathComponent("?page=\(number)&per_page=10")
+        let page = URLQueryItem(name: "page", value: "\(number)")
+        let perPage = URLQueryItem(name: "per_page", value: "10")
+        return baseUrl?.appending(queryItems: [page, perPage])
     }
     
     static func getBeerByName(name: String) -> URL? {

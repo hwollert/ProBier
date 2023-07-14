@@ -12,17 +12,24 @@ struct BeerList: View {
     
     var body: some View {
         NavigationView {
-            List(viewModel.beers, id: \.id) { beer in
-                NavigationLink(destination: {
-                    BeerDetail(beer: beer)
-                }) {
-                    BeerPreview(beer: beer)
-                        .transition(.opacity)
+            ScrollView {
+                LazyVStack {
+                    ForEach(viewModel.beers, id: \.id) { beer in
+                        NavigationLink(destination: {
+                            BeerDetail(beer: beer)
+                        }) {
+                            BeerPreview(beer: beer)
+                                .transition(.opacity)
+                                .onAppear {
+                                    viewModel.laodNewPage(index: beer.id)
+                                }
+                        }
+                    }
                 }
             }
-            .onAppear {
-                viewModel.update()
-            }
+        }
+        .onAppear {
+            viewModel.update()
         }
     }
 }

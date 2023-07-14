@@ -10,13 +10,23 @@ import Foundation
 @MainActor class BeerListViewModel: ObservableObject {
     @Published var beers: [BeerEntity] = []
     
+    private var page: Int = 1
+    
     func update() {
         Task {
             do {
-                beers = try await BeerRequest().getAllBeer()
+                let result = try await BeerRequest().getAllBeer(pageNumber: page)
+                beers.append(contentsOf: result)
             } catch let error {
                 print("await error \(error)")
             }
+        }
+    }
+    
+    func laodNewPage(index: Int) {
+        if index % 10 == 0 && index == beers.count {
+            page += 1
+            update()
         }
     }
 }

@@ -8,8 +8,8 @@
 import Foundation
 
 struct BeerRequest {
-    func getAllBeer() async throws -> [BeerEntity] {
-        guard let url = Punk.random() else { fatalError("Missing URL") }
+    func getAllBeer(pageNumber: Int) async throws -> [BeerEntity] {
+        guard let url = Punk.getPage(number: pageNumber) else { fatalError("Missing URL") }
         let urlRequest = URLRequest(url: url)
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         
