@@ -23,7 +23,7 @@ struct BeerDetail: View {
     init(beer: BeerModel) {
         self.beer = beer
         
-        _storedItem = State(initialValue: BeerMapper.mapToBeer(from: beer))
+        _storedItem = State(initialValue: ModelMapper.mapToBeer(from: beer))
     }
     
     var body: some View {
@@ -167,7 +167,7 @@ struct BeerDetail: View {
     private func addItem() {
         withAnimation {
             if !viewContext.hasChanges {
-                self.storedItem = BeerMapper.mapToBeer(from: beer, context: viewContext)
+                self.storedItem = ModelMapper.mapToBeer(from: beer, context: viewContext)
             }
             do {
                 try viewContext.save()

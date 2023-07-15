@@ -27,14 +27,14 @@ struct BeerPreview: View {
                     .opacity(animationAmount + 0.3)
                     .animation(
                         .easeInOut(duration: 2)
-                            .repeatForever(autoreverses: true),
+                        .repeatForever(autoreverses: true),
                         value: animationAmount
                     )
             }
-                .frame(width: 80, height: 80)
-                .background(Color("LightGrayColor"))
-                .cornerRadius(8.0)
-                .padding(.trailing, 8)
+            .frame(width: 80, height: 80)
+            .background(Color("LightGrayColor"))
+            .cornerRadius(8.0)
+            .padding(.trailing, 8)
             VStack {
                 HStack {
                     Text(beer.name)
@@ -57,7 +57,7 @@ struct BeerPreview: View {
 
 struct BeerPreview_Previews: PreviewProvider {
     static var previews: some View {
-//        BeerPreview(beer: .constant(Beer()))
-        Text("Heelo World")
+        //        BeerPreview(beer: .constant(Beer()))
+        Text("Hello World")
     }
 }

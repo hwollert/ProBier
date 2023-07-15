@@ -42,6 +42,29 @@
 		1C68CB712A62D5D60093DDEB /* VolumeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB3E2A6024990093DDEB /* VolumeEntity.swift */; };
 		1C68CB722A62D5D60093DDEB /* MethodEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB442A6027940093DDEB /* MethodEntity.swift */; };
 		1C68CB732A62D5D60093DDEB /* IngredientsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB462A60287A0093DDEB /* IngredientsEntity.swift */; };
+		1C68CB982A62D90E0093DDEB /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C68CB972A62D90E0093DDEB /* WidgetKit.framework */; };
+		1C68CB9A2A62D90E0093DDEB /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C68CB992A62D90E0093DDEB /* SwiftUI.framework */; };
+		1C68CB9D2A62D90E0093DDEB /* ProBierWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB9C2A62D90E0093DDEB /* ProBierWidgetBundle.swift */; };
+		1C68CB9F2A62D90E0093DDEB /* ProBierWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB9E2A62D90E0093DDEB /* ProBierWidget.swift */; };
+		1C68CBA52A62D90F0093DDEB /* ProBierWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1C68CB952A62D90E0093DDEB /* ProBierWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1C68CBAA2A62D9AE0093DDEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C68CB122A6010900093DDEB /* Assets.xcassets */; };
+		1C68CBAB2A62DEF70093DDEB /* BeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB3A2A601FF80093DDEB /* BeerManager.swift */; };
+		1C68CBAD2A62DF6E0093DDEB /* VolumeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB612A61CD360093DDEB /* VolumeModel.swift */; };
+		1C68CBAE2A62DF6E0093DDEB /* IngredientsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB652A61CD5B0093DDEB /* IngredientsModel.swift */; };
+		1C68CBAF2A62DF6E0093DDEB /* MethodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB632A61CD490093DDEB /* MethodModel.swift */; };
+		1C68CBB02A62DF6E0093DDEB /* BeerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB592A618DA70093DDEB /* BeerRepository.swift */; };
+		1C68CBB12A62DF6E0093DDEB /* BeerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB5B2A618E340093DDEB /* BeerInteractor.swift */; };
+		1C68CBB22A62DF6E0093DDEB /* BeerMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB5D2A6191260093DDEB /* BeerMapper.swift */; };
+		1C68CBB32A62DF6E0093DDEB /* BeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB5F2A61CD1A0093DDEB /* BeerModel.swift */; };
+		1C68CBB82A62DF820093DDEB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB4A2A603BBA0093DDEB /* API.swift */; };
+		1C68CBB92A62DF820093DDEB /* IngredientsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB462A60287A0093DDEB /* IngredientsEntity.swift */; };
+		1C68CBBA2A62DF820093DDEB /* MethodEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB442A6027940093DDEB /* MethodEntity.swift */; };
+		1C68CBBB2A62DF820093DDEB /* BeerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB3C2A6020D20093DDEB /* BeerEntity.swift */; };
+		1C68CBBC2A62DF820093DDEB /* VolumeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB3E2A6024990093DDEB /* VolumeEntity.swift */; };
+		1C68CBBD2A62DFA00093DDEB /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB672A62A17A0093DDEB /* ErrorType.swift */; };
+		1C68CBBE2A62DFA00093DDEB /* StateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB692A62A1D50093DDEB /* StateType.swift */; };
+		1C68CBBF2A62DFC30093DDEB /* ProBier.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB0D2A60108F0093DDEB /* ProBier.xcdatamodeld */; };
+		1C68CBC22A62E7C70093DDEB /* ModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CBC12A62E7C70093DDEB /* ModelMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +82,28 @@
 			remoteGlobalIDString = 1C68CB052A60108F0093DDEB;
 			remoteInfo = ProBier;
 		};
+		1C68CBA32A62D90F0093DDEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1C68CAFE2A60108F0093DDEB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C68CB942A62D90E0093DDEB;
+			remoteInfo = ProBierWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1C68CBA62A62D90F0093DDEB /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1C68CBA52A62D90F0093DDEB /* ProBierWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1C68CB062A60108F0093DDEB /* ProBier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProBier.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +140,13 @@
 		1C68CB692A62A1D50093DDEB /* StateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateType.swift; sourceTree = "<group>"; };
 		1C68CB6B2A62B6EF0093DDEB /* StoredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredList.swift; sourceTree = "<group>"; };
 		1C68CB6E2A62D49D0093DDEB /* MockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockData.json; sourceTree = "<group>"; };
+		1C68CB952A62D90E0093DDEB /* ProBierWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ProBierWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C68CB972A62D90E0093DDEB /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		1C68CB992A62D90E0093DDEB /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		1C68CB9C2A62D90E0093DDEB /* ProBierWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProBierWidgetBundle.swift; sourceTree = "<group>"; };
+		1C68CB9E2A62D90E0093DDEB /* ProBierWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProBierWidget.swift; sourceTree = "<group>"; };
+		1C68CBA22A62D90F0093DDEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C68CBC12A62E7C70093DDEB /* ModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +171,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1C68CB922A62D90E0093DDEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C68CB9A2A62D90E0093DDEB /* SwiftUI.framework in Frameworks */,
+				1C68CB982A62D90E0093DDEB /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -129,6 +189,8 @@
 				1C68CB082A60108F0093DDEB /* ProBier */,
 				1C68CB1F2A6010900093DDEB /* ProBierTests */,
 				1C68CB292A6010900093DDEB /* ProBierUITests */,
+				1C68CB9B2A62D90E0093DDEB /* ProBierWidget */,
+				1C68CB962A62D90E0093DDEB /* Frameworks */,
 				1C68CB072A60108F0093DDEB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -139,6 +201,7 @@
 				1C68CB062A60108F0093DDEB /* ProBier.app */,
 				1C68CB1C2A6010900093DDEB /* ProBierTests.xctest */,
 				1C68CB262A6010900093DDEB /* ProBierUITests.xctest */,
+				1C68CB952A62D90E0093DDEB /* ProBierWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -206,6 +269,7 @@
 				1C68CB592A618DA70093DDEB /* BeerRepository.swift */,
 				1C68CB5B2A618E340093DDEB /* BeerInteractor.swift */,
 				1C68CB5D2A6191260093DDEB /* BeerMapper.swift */,
+				1C68CBC12A62E7C70093DDEB /* ModelMapper.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -235,6 +299,25 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		1C68CB962A62D90E0093DDEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C68CB972A62D90E0093DDEB /* WidgetKit.framework */,
+				1C68CB992A62D90E0093DDEB /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1C68CB9B2A62D90E0093DDEB /* ProBierWidget */ = {
+			isa = PBXGroup;
+			children = (
+				1C68CB9C2A62D90E0093DDEB /* ProBierWidgetBundle.swift */,
+				1C68CB9E2A62D90E0093DDEB /* ProBierWidget.swift */,
+				1C68CBA22A62D90F0093DDEB /* Info.plist */,
+			);
+			path = ProBierWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -245,10 +328,12 @@
 				1C68CB022A60108F0093DDEB /* Sources */,
 				1C68CB032A60108F0093DDEB /* Frameworks */,
 				1C68CB042A60108F0093DDEB /* Resources */,
+				1C68CBA62A62D90F0093DDEB /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1C68CBA42A62D90F0093DDEB /* PBXTargetDependency */,
 			);
 			name = ProBier;
 			productName = ProBier;
@@ -291,6 +376,23 @@
 			productReference = 1C68CB262A6010900093DDEB /* ProBierUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		1C68CB942A62D90E0093DDEB /* ProBierWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C68CBA92A62D90F0093DDEB /* Build configuration list for PBXNativeTarget "ProBierWidgetExtension" */;
+			buildPhases = (
+				1C68CB912A62D90E0093DDEB /* Sources */,
+				1C68CB922A62D90E0093DDEB /* Frameworks */,
+				1C68CB932A62D90E0093DDEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ProBierWidgetExtension;
+			productName = ProBierWidgetExtension;
+			productReference = 1C68CB952A62D90E0093DDEB /* ProBierWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -312,6 +414,9 @@
 						CreatedOnToolsVersion = 15.0;
 						TestTargetID = 1C68CB052A60108F0093DDEB;
 					};
+					1C68CB942A62D90E0093DDEB = {
+						CreatedOnToolsVersion = 15.0;
+					};
 				};
 			};
 			buildConfigurationList = 1C68CB012A60108F0093DDEB /* Build configuration list for PBXProject "ProBier" */;
@@ -330,6 +435,7 @@
 				1C68CB052A60108F0093DDEB /* ProBier */,
 				1C68CB1B2A6010900093DDEB /* ProBierTests */,
 				1C68CB252A6010900093DDEB /* ProBierUITests */,
+				1C68CB942A62D90E0093DDEB /* ProBierWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -359,6 +465,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1C68CB932A62D90E0093DDEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C68CBAA2A62D9AE0093DDEB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -381,6 +495,7 @@
 				1C68CB3D2A6020D20093DDEB /* BeerEntity.swift in Sources */,
 				1C68CB5C2A618E340093DDEB /* BeerInteractor.swift in Sources */,
 				1C68CB582A6070250093DDEB /* BeerListViewModel.swift in Sources */,
+				1C68CBC22A62E7C70093DDEB /* ModelMapper.swift in Sources */,
 				1C68CB602A61CD1A0093DDEB /* BeerModel.swift in Sources */,
 				1C68CB622A61CD360093DDEB /* VolumeModel.swift in Sources */,
 				1C68CB6A2A62A1D50093DDEB /* StateType.swift in Sources */,
@@ -415,6 +530,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1C68CB912A62D90E0093DDEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C68CBB82A62DF820093DDEB /* API.swift in Sources */,
+				1C68CBAE2A62DF6E0093DDEB /* IngredientsModel.swift in Sources */,
+				1C68CBB32A62DF6E0093DDEB /* BeerModel.swift in Sources */,
+				1C68CBB92A62DF820093DDEB /* IngredientsEntity.swift in Sources */,
+				1C68CBAB2A62DEF70093DDEB /* BeerManager.swift in Sources */,
+				1C68CB9D2A62D90E0093DDEB /* ProBierWidgetBundle.swift in Sources */,
+				1C68CBBD2A62DFA00093DDEB /* ErrorType.swift in Sources */,
+				1C68CBBE2A62DFA00093DDEB /* StateType.swift in Sources */,
+				1C68CBAF2A62DF6E0093DDEB /* MethodModel.swift in Sources */,
+				1C68CBB12A62DF6E0093DDEB /* BeerInteractor.swift in Sources */,
+				1C68CBB22A62DF6E0093DDEB /* BeerMapper.swift in Sources */,
+				1C68CBBC2A62DF820093DDEB /* VolumeEntity.swift in Sources */,
+				1C68CBBA2A62DF820093DDEB /* MethodEntity.swift in Sources */,
+				1C68CBB02A62DF6E0093DDEB /* BeerRepository.swift in Sources */,
+				1C68CB9F2A62D90E0093DDEB /* ProBierWidget.swift in Sources */,
+				1C68CBBF2A62DFC30093DDEB /* ProBier.xcdatamodeld in Sources */,
+				1C68CBBB2A62DF820093DDEB /* BeerEntity.swift in Sources */,
+				1C68CBAD2A62DF6E0093DDEB /* VolumeModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -427,6 +567,11 @@
 			isa = PBXTargetDependency;
 			target = 1C68CB052A60108F0093DDEB /* ProBier */;
 			targetProxy = 1C68CB272A6010900093DDEB /* PBXContainerItemProxy */;
+		};
+		1C68CBA42A62D90F0093DDEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1C68CB942A62D90E0093DDEB /* ProBierWidgetExtension */;
+			targetProxy = 1C68CBA32A62D90F0093DDEB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -548,12 +693,14 @@
 		1C68CB312A6010900093DDEB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ProBier/ProBier.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ProBier/Preview Content\"";
+				DEVELOPMENT_TEAM = 5VCTU6NWZK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = ProBier;
@@ -586,12 +733,14 @@
 		1C68CB322A6010900093DDEB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ProBier/ProBier.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ProBier/Preview Content\"";
+				DEVELOPMENT_TEAM = 5VCTU6NWZK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = ProBier;
@@ -707,6 +856,65 @@
 			};
 			name = Release;
 		};
+		1C68CBA72A62D90F0093DDEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5VCTU6NWZK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ProBierWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ProBierWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.hcw.ProBier.ProBierWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1C68CBA82A62D90F0093DDEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5VCTU6NWZK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ProBierWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ProBierWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.hcw.ProBier.ProBierWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -742,6 +950,15 @@
 			buildConfigurations = (
 				1C68CB372A6010900093DDEB /* Debug */,
 				1C68CB382A6010900093DDEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C68CBA92A62D90F0093DDEB /* Build configuration list for PBXNativeTarget "ProBierWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C68CBA72A62D90F0093DDEB /* Debug */,
+				1C68CBA82A62D90F0093DDEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
