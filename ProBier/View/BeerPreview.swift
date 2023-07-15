@@ -10,7 +10,7 @@ import SwiftUI
 struct BeerPreview: View {
     @State private var animationAmount = 0.0
     
-    var beer: BeerEntity
+    var beer: BeerModel
     
     var body: some View {
         HStack {
@@ -57,6 +57,7 @@ struct BeerPreview: View {
 
 struct BeerPreview_Previews: PreviewProvider {
     static var previews: some View {
-        BeerPreview(beer: BeerEntity(id: 1, name: "Ganther", tagline: "Beer from Freiburg", first_brewed: "1892", description: "Beer that is brewed in the city Freiburg", volume: VolumeEntity(), boil_volume: VolumeEntity(), method: MethodEntity(mash_temp: [], fermentation: FermentationEntity(temp: VolumeEntity()), twist: ""), ingredients: IngredientsEntity(malt: [], hops: []), food_pairing: [], brewers_tips: "", contributed_by: ""))
+//        BeerPreview(beer: .constant(Beer()))
+        Text("Heelo World")
     }
 }

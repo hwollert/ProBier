@@ -8,17 +8,26 @@
 import Foundation
 
 @MainActor class BeerListViewModel: ObservableObject {
-    @Published var beers: [BeerEntity] = []
+    @Published var beers: [BeerModel] = []
+    @Published var errorThrown = false
     
+    private let interactor = BeerInteractor(repository: BeerManager.shared)
     private var page: Int = 1
+    private var cachedBeers: [BeerModel] = []
     
-    func update() {
+    func update(renew: Bool = false) {
         Task {
             do {
-                let result = try await BeerRequest().getAllBeer(pageNumber: page)
+                if renew {
+                    page = 1
+                    beers.removeAll()
+                }
+                let result = try await interactor.getAllBeer(pageNumber: page)
                 beers.append(contentsOf: result)
-            } catch let error {
-                print("await error \(error)")
+            } catch ErrorType.tooManyRequests {
+                errorThrown = true
+            } catch ErrorType.notAvailable {
+                errorThrown = true
             }
         }
     }
@@ -27,6 +36,24 @@ import Foundation
         if index % 10 == 0 && index == beers.count {
             page += 1
             update()
+        }
+    }
+    
+    func search(text: String) {
+        Task {
+            do {
+                cachedBeers = beers
+                beers = try await interactor.getBeerWithName(name: text)
+            } catch let error {
+                print("await error \(error)")
+            }
+        }
+    }
+    
+    func cancelSearch() {
+        if !cachedBeers.isEmpty {
+            beers = cachedBeers
+            cachedBeers.removeAll()
         }
     }
 }

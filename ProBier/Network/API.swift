@@ -26,6 +26,7 @@ enum Punk: API {
     }
     
     static func getBeerByName(name: String) -> URL? {
-        baseUrl?.appendingPathComponent("?beer_name=\(name)")
+        let beerName = URLQueryItem(name: "beer_name", value: name)
+        return baseUrl?.appending(queryItems: [beerName])
     }
 }
