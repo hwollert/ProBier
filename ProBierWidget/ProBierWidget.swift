@@ -37,8 +37,12 @@ struct Provider: TimelineProvider {
                     name: beer.name
                 )
                 entries.append(entry)
-            } catch {
-                
+            } catch ErrorType.tooManyRequests {
+                print("too many requests")
+            } catch ErrorType.notAvailable {
+                print("not available")
+            } catch let error {
+                print("Error: \(error)")
             }
             
             let timeline = Timeline(entries: entries, policy: .atEnd)
@@ -79,18 +83,16 @@ struct ProBierWidgetEntryView : View {
     var entry: Provider.Entry
     
     var body: some View {
-        VStack {
+        VStack(alignment: .center) {
             NetworkImage(url: URL(string: entry.url))
                 .frame(width: 80, height: 80)
-                .background(Color("LightGrayColor"))
+                .background(Color("AccentColor")
+                    .ignoresSafeArea())
                 .cornerRadius(8.0)
                 .padding(.trailing, 8)
             
             Text(entry.name)
         }
-        .background(
-            Color.accentColor
-        )
     }
 }
 

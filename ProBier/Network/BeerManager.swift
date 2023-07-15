@@ -68,7 +68,7 @@ extension BeerManager: BeerRepository {
                 throw ErrorType.notAvailable
             }
         }
-        let decodedBeer = try JSONDecoder().decode(BeerEntity.self, from: data)
-        return BeerMapper.mapToModel(from: decodedBeer)
+        let decodedBeer = try JSONDecoder().decode([BeerEntity].self, from: data)
+        return BeerMapper.mapToModel(from: decodedBeer[0])
     }
 }

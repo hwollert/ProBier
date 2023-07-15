@@ -65,6 +65,7 @@
 		1C68CBBE2A62DFA00093DDEB /* StateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB692A62A1D50093DDEB /* StateType.swift */; };
 		1C68CBBF2A62DFC30093DDEB /* ProBier.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB0D2A60108F0093DDEB /* ProBier.xcdatamodeld */; };
 		1C68CBC22A62E7C70093DDEB /* ModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CBC12A62E7C70093DDEB /* ModelMapper.swift */; };
+		1C6D7EAF2A6337F800D41FF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C6D7EAE2A6337F800D41FF6 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +148,7 @@
 		1C68CB9E2A62D90E0093DDEB /* ProBierWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProBierWidget.swift; sourceTree = "<group>"; };
 		1C68CBA22A62D90F0093DDEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C68CBC12A62E7C70093DDEB /* ModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMapper.swift; sourceTree = "<group>"; };
+		1C6D7EAE2A6337F800D41FF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +316,7 @@
 				1C68CB9C2A62D90E0093DDEB /* ProBierWidgetBundle.swift */,
 				1C68CB9E2A62D90E0093DDEB /* ProBierWidget.swift */,
 				1C68CBA22A62D90F0093DDEB /* Info.plist */,
+				1C6D7EAE2A6337F800D41FF6 /* Assets.xcassets */,
 			);
 			path = ProBierWidget;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C6D7EAF2A6337F800D41FF6 /* Assets.xcassets in Resources */,
 				1C68CBAA2A62D9AE0093DDEB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
