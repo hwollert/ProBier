@@ -12,19 +12,12 @@ struct BeerDetail: View {
     
     @State private var animationAmount = 1.0
     @State private var isStored = false
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Beer.id, ascending: true)],
-        animation: .default)
+    @FetchRequest(sortDescriptors: [],
+                  animation: .none)
     private var items: FetchedResults<Beer>
     
     var beer: BeerModel
-    @State private var storedItem: Beer
-    
-    init(beer: BeerModel) {
-        self.beer = beer
-        
-        _storedItem = State(initialValue: ModelMapper.mapToBeer(from: beer))
-    }
+    @State private var storedItem: Beer?
     
     var body: some View {
         ScrollView {
@@ -134,31 +127,34 @@ struct BeerDetail: View {
                 .padding(.top)
             }
             
-            if items.contains(storedItem) {
-                Button(action: {
-                    deleteItems()
-                    print(("items size: \(items.count)"))
-                    isStored.toggle()
-                }, label: {
-                    Label("Delete Item", systemImage: "minus")
-                })
-                .buttonStyle(BorderedProminentButtonStyle())
-                .transition(.scale)
-            } else {
-                Button(action: {
-                    addItem()
-                    print(("items size: \(items.count)"))
-                    isStored.toggle()
-                }, label: {
-                    Label("Add Item", systemImage: "plus")
-                })
-                .buttonStyle(BorderedProminentButtonStyle())
-                .transition(.scale)
+            if storedItem != nil {
+                if items.contains(storedItem!) {
+                    Button(action: {
+                        deleteItems()
+                        print(("items size: \(items.count)"))
+                        isStored.toggle()
+                    }, label: {
+                        Label("Delete Item", systemImage: "minus")
+                    })
+                    .buttonStyle(BorderedProminentButtonStyle())
+                    .transition(.scale)
+                } else {
+                    Button(action: {
+                        addItem()
+                        print(("items size: \(items.count)"))
+                        isStored.toggle()
+                    }, label: {
+                        Label("Add Item", systemImage: "plus")
+                    })
+                    .buttonStyle(BorderedProminentButtonStyle())
+                    .transition(.scale)
+                }
             }
         }
         .padding()
         .onAppear {
             animationAmount = 1.5
+            storedItem = ModelMapper.mapToBeer(from: beer, context: viewContext)
         }
         .navigationTitle(Text(beer.name))
     }
@@ -180,7 +176,7 @@ struct BeerDetail: View {
     
     private func deleteItems() {
         withAnimation {
-            viewContext.delete(storedItem)
+            items.filter { $0.name == storedItem?.name }.forEach(viewContext.delete)
             do {
                 try viewContext.save()
             } catch {

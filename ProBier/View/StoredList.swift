@@ -17,7 +17,7 @@ struct StoredList: View {
     
     var body: some View {
         NavigationView {
-            List(storedBeers, id: \.id) { beer in
+            List(storedBeers) { beer in
                 NavigationLink(destination: {
                     BeerDetail(beer: BeerMapper.mapToModel(from: beer))
                 }) {
