@@ -31,7 +31,6 @@ extension BeerManager: BeerRepository {
             }
         }
         let decodedBeer = try JSONDecoder().decode([BeerEntity].self, from: data)
-        print("Async decodedFood", decodedBeer)
         return decodedBeer.map { BeerMapper.mapToModel(from: $0) }
     }
     
@@ -51,7 +50,6 @@ extension BeerManager: BeerRepository {
             }
         }
         let decodedBeer = try JSONDecoder().decode([BeerEntity].self, from: data)
-        print("Async decodedFood", decodedBeer)
         return decodedBeer.map { BeerMapper.mapToModel(from: $0) }
     }
     
@@ -71,7 +69,6 @@ extension BeerManager: BeerRepository {
             }
         }
         let decodedBeer = try JSONDecoder().decode(BeerEntity.self, from: data)
-        print("Async decodedFood", decodedBeer)
         return BeerMapper.mapToModel(from: decodedBeer)
     }
 }

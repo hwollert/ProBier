@@ -35,6 +35,13 @@
 		1C68CB662A61CD5B0093DDEB /* IngredientsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB652A61CD5B0093DDEB /* IngredientsModel.swift */; };
 		1C68CB682A62A17A0093DDEB /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB672A62A17A0093DDEB /* ErrorType.swift */; };
 		1C68CB6A2A62A1D50093DDEB /* StateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB692A62A1D50093DDEB /* StateType.swift */; };
+		1C68CB6C2A62B6EF0093DDEB /* StoredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB6B2A62B6EF0093DDEB /* StoredList.swift */; };
+		1C68CB6D2A62D2750093DDEB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB4A2A603BBA0093DDEB /* API.swift */; };
+		1C68CB6F2A62D49D0093DDEB /* MockData.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C68CB6E2A62D49D0093DDEB /* MockData.json */; };
+		1C68CB702A62D5CC0093DDEB /* BeerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB3C2A6020D20093DDEB /* BeerEntity.swift */; };
+		1C68CB712A62D5D60093DDEB /* VolumeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB3E2A6024990093DDEB /* VolumeEntity.swift */; };
+		1C68CB722A62D5D60093DDEB /* MethodEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB442A6027940093DDEB /* MethodEntity.swift */; };
+		1C68CB732A62D5D60093DDEB /* IngredientsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB462A60287A0093DDEB /* IngredientsEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +94,8 @@
 		1C68CB652A61CD5B0093DDEB /* IngredientsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsModel.swift; sourceTree = "<group>"; };
 		1C68CB672A62A17A0093DDEB /* ErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
 		1C68CB692A62A1D50093DDEB /* StateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateType.swift; sourceTree = "<group>"; };
+		1C68CB6B2A62B6EF0093DDEB /* StoredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredList.swift; sourceTree = "<group>"; };
+		1C68CB6E2A62D49D0093DDEB /* MockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				1C68CB202A6010900093DDEB /* ProBierTests.swift */,
+				1C68CB6E2A62D49D0093DDEB /* MockData.json */,
 			);
 			path = ProBierTests;
 			sourceTree = "<group>";
@@ -219,6 +229,7 @@
 				1C68CB4F2A6043700093DDEB /* BeerPreview.swift */,
 				1C68CB532A606FA60093DDEB /* BeerList.swift */,
 				1C68CB512A6067D50093DDEB /* BeerDetail.swift */,
+				1C68CB6B2A62B6EF0093DDEB /* StoredList.swift */,
 				1C68CB572A6070250093DDEB /* BeerListViewModel.swift */,
 			);
 			path = View;
@@ -337,6 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C68CB6F2A62D49D0093DDEB /* MockData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C68CB6C2A62B6EF0093DDEB /* StoredList.swift in Sources */,
 				1C68CB452A6027940093DDEB /* MethodEntity.swift in Sources */,
 				1C68CB0F2A60108F0093DDEB /* ProBier.xcdatamodeld in Sources */,
 				1C68CB642A61CD490093DDEB /* MethodModel.swift in Sources */,
@@ -384,6 +397,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C68CB6D2A62D2750093DDEB /* API.swift in Sources */,
+				1C68CB722A62D5D60093DDEB /* MethodEntity.swift in Sources */,
+				1C68CB702A62D5CC0093DDEB /* BeerEntity.swift in Sources */,
+				1C68CB732A62D5D60093DDEB /* IngredientsEntity.swift in Sources */,
+				1C68CB712A62D5D60093DDEB /* VolumeEntity.swift in Sources */,
 				1C68CB212A6010900093DDEB /* ProBierTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

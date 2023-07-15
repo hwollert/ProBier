@@ -22,7 +22,7 @@ struct BeerModel: Decodable {
     var attenuataion_level: Double?
     var volume: VolumeModel
     var boil_volume: VolumeModel
-    var method: MethodModel
+    var method: MethodModel?
     var ingredients: IngredientsModel
     var food_pairing: [String]
     var brewers_tips: String

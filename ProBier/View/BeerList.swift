@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BeerList: View {
+    @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.isSearching) private var isSearching
     
     @StateObject private var viewModel = BeerListViewModel()
@@ -15,24 +16,36 @@ struct BeerList: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                LazyVStack {
-                    ForEach(viewModel.beers, id: \.id) { beer in
-                        NavigationLink(destination: {
-                            BeerDetail(beer: beer)
-                        }) {
-                            BeerPreview(beer: beer)
-                                .transition(.opacity)
-                                .onAppear {
-                                    viewModel.laodNewPage(index: Int(beer.id))
+            ZStack {
+                if viewModel.beers.isEmpty {
+                    Text("No beers loaded yet")
+                } else {
+                    VStack {
+                        ScrollView {
+                            LazyVStack {
+                                ForEach(viewModel.beers, id: \.id) { beer in
+                                    NavigationLink(destination: {
+                                        BeerDetail(beer: beer)
+                                            .environment(\.managedObjectContext, viewContext)
+                                    }) {
+                                        BeerPreview(beer: beer)
+                                            .transition(.opacity)
+                                            .onAppear {
+                                                viewModel.laodNewPage(index: Int(beer.id))
+                                            }
+                                    }
                                 }
+                            }
+                        }
+                        .navigationTitle("Beer everywhere")
+                        .refreshable {
+                            viewModel.update(renew: true)
                         }
                     }
                 }
-            }
-            .navigationTitle("Beer everywhere")
-            .refreshable {
-                viewModel.update(renew: true)
+                if viewModel.loading == .loading {
+                    ProgressView()
+                }
             }
         }
         .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .automatic), prompt: "Look for something")

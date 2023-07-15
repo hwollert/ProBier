@@ -13,7 +13,7 @@ struct ProBierApp: App {
 
     var body: some Scene {
         WindowGroup {
-            BeerList()
+            ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

@@ -7,5 +7,5 @@
 
 enum StateType {
     case loading
-    case finished
+    case idle
 }

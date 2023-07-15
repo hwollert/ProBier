@@ -10,6 +10,7 @@ import Foundation
 @MainActor class BeerListViewModel: ObservableObject {
     @Published var beers: [BeerModel] = []
     @Published var errorThrown = false
+    @Published var loading = StateType.idle
     
     private let interactor = BeerInteractor(repository: BeerManager.shared)
     private var page: Int = 1
@@ -18,12 +19,14 @@ import Foundation
     func update(renew: Bool = false) {
         Task {
             do {
+                loading = StateType.loading
                 if renew {
                     page = 1
                     beers.removeAll()
                 }
                 let result = try await interactor.getAllBeer(pageNumber: page)
                 beers.append(contentsOf: result)
+                loading = StateType.idle
             } catch ErrorType.tooManyRequests {
                 errorThrown = true
             } catch ErrorType.notAvailable {
@@ -42,8 +45,10 @@ import Foundation
     func search(text: String) {
         Task {
             do {
+                loading = StateType.loading
                 cachedBeers = beers
                 beers = try await interactor.getBeerWithName(name: text)
+                loading = StateType.idle
             } catch let error {
                 print("await error \(error)")
             }

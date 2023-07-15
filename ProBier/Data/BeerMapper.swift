@@ -64,6 +64,38 @@ enum BeerMapper {
         return newBeer
     }
     
+    static func mapToModel(from entity: Beer) -> BeerModel {
+        let ingredients = Array(entity.ingredients as! Set<Ingredient>)
+        let ingredientModel = IngredientsModel(
+            malt: ingredients.map { IngredientModel(
+                name: $0.name ?? "",
+                amount: VolumeModel(value: $0.amount?.value, unit: $0.amount?.unit),
+                add: $0.add,
+                attribute: $0.attribute
+            )},
+            hops: [])
+        
+        let newBeer = BeerModel(
+            id: Int(entity.id),
+            name: entity.name ?? "",
+            tagline: entity.tagline ?? "",
+            first_brewed: entity.first_brewed ?? "",
+            description: entity.desc ?? "",
+            image_url: entity.image_url,
+            abv: entity.abv,
+            ebc: entity.ebc,
+            srm: entity.srm,
+            ph: entity.ph,
+            volume: VolumeModel(value: entity.volume?.value, unit: entity.volume?.unit),
+            boil_volume: VolumeModel(value: entity.boil_volume?.value, unit: entity.boil_volume?.unit),
+            ingredients: ingredientModel,
+            food_pairing: Array(entity.food_pairing as? Set<String> ?? []),
+            brewers_tips: entity.brewers_tips ?? "",
+            contributed_by: entity.contributed_by ?? ""
+        )
+        return newBeer
+    }
+    
     static func mapToBeer(from entity: BeerEntity) -> Beer {
         let context = PersistenceController.shared.container.viewContext
         let newBeer = Beer(context: context)
