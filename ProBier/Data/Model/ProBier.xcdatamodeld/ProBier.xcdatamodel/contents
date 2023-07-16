@@ -17,9 +17,15 @@
         <attribute name="tagline" optional="YES" attributeType="String"/>
         <attribute name="target_fg" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="boil_volume" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Volume"/>
-        <relationship name="food_pairing" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Food_Pair"/>
+        <relationship name="food_pairing" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Food_Pair"/>
         <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingredient"/>
         <relationship name="volume" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Volume"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="Fermentation" representedClassName="Fermentation" syncable="YES" codeGenerationType="class">
         <relationship name="temp" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Volume"/>
@@ -32,9 +38,6 @@
         <attribute name="attribute" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="amount" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Volume"/>
-    </entity>
-    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
-        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="MashTemp" representedClassName="MashTemp" syncable="YES" codeGenerationType="class">
         <attribute name="duration" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>

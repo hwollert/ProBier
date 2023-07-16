@@ -11,7 +11,7 @@ struct MashTempEntity: Decodable {
 }
 
 struct FermentationEntity: Decodable {
-    var temp : VolumeEntity
+    var temp: VolumeEntity
 }
 
 struct MethodEntity: Decodable {
