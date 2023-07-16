@@ -66,6 +66,7 @@
 		1C68CBBF2A62DFC30093DDEB /* ProBier.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CB0D2A60108F0093DDEB /* ProBier.xcdatamodeld */; };
 		1C68CBC22A62E7C70093DDEB /* ModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CBC12A62E7C70093DDEB /* ModelMapper.swift */; };
 		1C6D7EAF2A6337F800D41FF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C6D7EAE2A6337F800D41FF6 /* Assets.xcassets */; };
+		1C6D7EB12A641B0000D41FF6 /* BeerDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D7EB02A641B0000D41FF6 /* BeerDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +150,8 @@
 		1C68CBA22A62D90F0093DDEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C68CBC12A62E7C70093DDEB /* ModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMapper.swift; sourceTree = "<group>"; };
 		1C6D7EAE2A6337F800D41FF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1C6D7EB02A641B0000D41FF6 /* BeerDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailViewModel.swift; sourceTree = "<group>"; };
+		1C6D7EB42A643A8700D41FF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +214,7 @@
 		1C68CB082A60108F0093DDEB /* ProBier */ = {
 			isa = PBXGroup;
 			children = (
+				1C6D7EB42A643A8700D41FF6 /* Info.plist */,
 				1C68CB4C2A60432A0093DDEB /* View */,
 				1C68CB482A6039190093DDEB /* Data */,
 				1C68CB392A601FA70093DDEB /* Network */,
@@ -291,12 +295,11 @@
 		1C68CB4C2A60432A0093DDEB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1C6D7EB32A64210200D41FF6 /* BeerList */,
+				1C6D7EB22A6420F400D41FF6 /* BeerDetail */,
 				1C68CB102A60108F0093DDEB /* ContentView.swift */,
 				1C68CB4F2A6043700093DDEB /* BeerPreview.swift */,
-				1C68CB532A606FA60093DDEB /* BeerList.swift */,
-				1C68CB512A6067D50093DDEB /* BeerDetail.swift */,
 				1C68CB6B2A62B6EF0093DDEB /* StoredList.swift */,
-				1C68CB572A6070250093DDEB /* BeerListViewModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -319,6 +322,24 @@
 				1C6D7EAE2A6337F800D41FF6 /* Assets.xcassets */,
 			);
 			path = ProBierWidget;
+			sourceTree = "<group>";
+		};
+		1C6D7EB22A6420F400D41FF6 /* BeerDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1C68CB512A6067D50093DDEB /* BeerDetail.swift */,
+				1C6D7EB02A641B0000D41FF6 /* BeerDetailViewModel.swift */,
+			);
+			path = BeerDetail;
+			sourceTree = "<group>";
+		};
+		1C6D7EB32A64210200D41FF6 /* BeerList */ = {
+			isa = PBXGroup;
+			children = (
+				1C68CB532A606FA60093DDEB /* BeerList.swift */,
+				1C68CB572A6070250093DDEB /* BeerListViewModel.swift */,
+			);
+			path = BeerList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,6 +520,7 @@
 				1C68CB3D2A6020D20093DDEB /* BeerEntity.swift in Sources */,
 				1C68CB5C2A618E340093DDEB /* BeerInteractor.swift in Sources */,
 				1C68CB582A6070250093DDEB /* BeerListViewModel.swift in Sources */,
+				1C6D7EB12A641B0000D41FF6 /* BeerDetailViewModel.swift in Sources */,
 				1C68CBC22A62E7C70093DDEB /* ModelMapper.swift in Sources */,
 				1C68CB602A61CD1A0093DDEB /* BeerModel.swift in Sources */,
 				1C68CB622A61CD360093DDEB /* VolumeModel.swift in Sources */,
@@ -707,6 +729,7 @@
 				DEVELOPMENT_TEAM = 5VCTU6NWZK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ProBier/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ProBier;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -715,6 +738,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -747,6 +771,7 @@
 				DEVELOPMENT_TEAM = 5VCTU6NWZK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ProBier/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ProBier;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -755,6 +780,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

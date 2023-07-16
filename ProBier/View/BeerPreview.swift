@@ -14,7 +14,7 @@ struct BeerPreview: View {
     
     var body: some View {
         HStack {
-            AsyncImage(url: URL(string: beer.image_url ?? "https://images.punkapi.com/v2/227.png")) { image in
+            AsyncImage(url: URL(string: beer.image_url ?? "")) { image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -38,11 +38,13 @@ struct BeerPreview: View {
             VStack {
                 HStack {
                     Text(beer.name)
+                        .foregroundStyle(Color("TextColor"))
                         .font(.title)
                     Spacer()
                 }
                 HStack {
                     Text(beer.tagline)
+                        .foregroundStyle(Color("TextColor"))
                         .font(.subheadline)
                     Spacer()
                 }

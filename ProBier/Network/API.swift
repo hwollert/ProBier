@@ -29,4 +29,9 @@ enum Punk: API {
         let beerName = URLQueryItem(name: "beer_name", value: name)
         return baseUrl?.appending(queryItems: [beerName])
     }
+    
+    static func getBeerByID(id: String) -> URL? {
+        let beerID = URLQueryItem(name: "ids", value: id)
+        return baseUrl?.appending(queryItems: [beerID])
+    }
 }

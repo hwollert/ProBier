@@ -12,25 +12,24 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @State private var selectedList = "All"
     private var lists = ["All", "Stored"]
-
+    
     var body: some View {
-            VStack {
-                if selectedList == lists[0] {
-                    BeerList()
-                        .environment(\.managedObjectContext, viewContext)
-
-                } else {
-                    StoredList()
-                        .environment(\.managedObjectContext, viewContext)
-                }
-                Picker("", selection: $selectedList) {
-                    ForEach(lists, id: \.self) {
-                        Text($0)
-                    }
-                }
-                .pickerStyle(.segmented)
-                .padding()
+        VStack {
+            if selectedList == lists[0] {
+                BeerList()
+                    .environment(\.managedObjectContext, viewContext)                
+            } else {
+                StoredList()
+                    .environment(\.managedObjectContext, viewContext)
             }
+            Picker("", selection: $selectedList) {
+                ForEach(lists, id: \.self) {
+                    Text($0)
+                }
+            }
+            .pickerStyle(.segmented)
+            .padding()
+        }
     }
 }
 

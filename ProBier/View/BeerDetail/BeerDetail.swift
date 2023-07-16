@@ -9,15 +9,14 @@ import SwiftUI
 
 struct BeerDetail: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @StateObject private var viewModel = BeerDetailViewModel()
     
-    @State private var animationAmount = 1.0
-    @State private var isStored = false
     @FetchRequest(sortDescriptors: [],
                   animation: .none)
     private var items: FetchedResults<Beer>
     
+    @State private var animationAmount = 1.0
     var beer: BeerModel
-    @State private var storedItem: Beer?
     
     var body: some View {
         ScrollView {
@@ -127,63 +126,33 @@ struct BeerDetail: View {
                 .padding(.top)
             }
             
-            if storedItem != nil {
-                if items.contains(storedItem!) {
-                    Button(action: {
-                        deleteItems()
-                        print(("items size: \(items.count)"))
-                        isStored.toggle()
-                    }, label: {
-                        Label("Delete Item", systemImage: "minus")
-                    })
-                    .buttonStyle(BorderedProminentButtonStyle())
-                    .transition(.scale)
-                } else {
-                    Button(action: {
-                        addItem()
-                        print(("items size: \(items.count)"))
-                        isStored.toggle()
-                    }, label: {
-                        Label("Add Item", systemImage: "plus")
-                    })
-                    .buttonStyle(BorderedProminentButtonStyle())
-                    .transition(.scale)
-                }
+            if viewModel.isBeerStored(beer: beer, items: items) {
+                Button(action: {
+                    withAnimation {
+                        viewModel.deleteBeer(beer: beer, items: items, context: viewContext)
+                    }
+                }, label: {
+                    Label("Delete Item", systemImage: "minus")
+                })
+                .buttonStyle(BorderedProminentButtonStyle())
+                .transition(.scale)
+            } else {
+                Button(action: {
+                    withAnimation {
+                        viewModel.storeBeer(beer: beer, context: viewContext)
+                    }
+                }, label: {
+                    Label("Add Item", systemImage: "plus")
+                })
+                .buttonStyle(BorderedProminentButtonStyle())
+                .transition(.scale)
             }
         }
         .padding()
         .onAppear {
             animationAmount = 1.5
-            storedItem = ModelMapper.mapToBeer(from: beer, context: viewContext)
         }
         .navigationTitle(Text(beer.name))
-    }
-    
-    
-    private func addItem() {
-        withAnimation {
-            if !viewContext.hasChanges {
-                self.storedItem = ModelMapper.mapToBeer(from: beer, context: viewContext)
-            }
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-    
-    private func deleteItems() {
-        withAnimation {
-            items.filter { $0.name == storedItem?.name }.forEach(viewContext.delete)
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
     }
 }
 

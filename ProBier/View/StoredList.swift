@@ -20,25 +20,14 @@ struct StoredList: View {
             List(storedBeers) { beer in
                 NavigationLink(destination: {
                     BeerDetail(beer: BeerMapper.mapToModel(from: beer))
+                        .environment(\.managedObjectContext, viewContext)
                 }) {
                     BeerPreview(beer: BeerMapper.mapToModel(from: beer))
                         .transition(.opacity)
+                        .environment(\.managedObjectContext, viewContext)
                 }
             }
             .navigationTitle("Beer Store")
-        }
-    }
-    
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { storedBeers[$0] }.forEach(viewContext.delete)
-            
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
         }
     }
 }

@@ -13,7 +13,8 @@ struct Provider: TimelineProvider {
         return SimpleEntry(
             date: Date(),
             url: "https://images.punkapi.com/v2/227.png",
-            name: "Pilsen"
+            name: "Pilsen",
+            id: "4"
         )
     }
     
@@ -21,7 +22,8 @@ struct Provider: TimelineProvider {
         let entry = SimpleEntry(
             date: Date(),
             url: "https://images.punkapi.com/v2/227.png",
-            name: "Pilsen"
+            name: "Pilsen",
+            id: "4"
         )
         completion(entry)
     }
@@ -29,12 +31,15 @@ struct Provider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         Task {
             var entries: [SimpleEntry] = []
+            let currentDate = Date()
+            
             do {
                 let beer = try await BeerManager.shared.getRandomBeer()
                 let entry = SimpleEntry(
                     date: Date(),
                     url: beer.image_url ?? "",
-                    name: beer.name
+                    name: beer.name,
+                    id: "\(beer.id)"
                 )
                 entries.append(entry)
             } catch ErrorType.tooManyRequests {
@@ -45,7 +50,8 @@ struct Provider: TimelineProvider {
                 print("Error: \(error)")
             }
             
-            let timeline = Timeline(entries: entries, policy: .atEnd)
+            let loadAfterDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)!
+            let timeline = Timeline(entries: entries, policy: .after(loadAfterDate))
             completion(timeline)
         }
     }
@@ -55,14 +61,13 @@ struct SimpleEntry: TimelineEntry {
     let date: Date
     let url: String
     let name: String
+    let id: String
 }
 
 struct NetworkImage: View {
-    
     let url: URL?
     
     var body: some View {
-        
         Group {
             if let url = url, let imageData = try? Data(contentsOf: url),
                let uiImage = UIImage(data: imageData) {
@@ -76,7 +81,6 @@ struct NetworkImage: View {
             }
         }
     }
-    
 }
 
 struct ProBierWidgetEntryView : View {
@@ -86,13 +90,13 @@ struct ProBierWidgetEntryView : View {
         VStack(alignment: .center) {
             NetworkImage(url: URL(string: entry.url))
                 .frame(width: 80, height: 80)
-                .background(Color("AccentColor")
-                    .ignoresSafeArea())
                 .cornerRadius(8.0)
                 .padding(.trailing, 8)
             
             Text(entry.name)
         }
+        .widgetURL(URL(string: "beer-widget://\(entry.id)"))
+        .padding()
     }
 }
 
@@ -105,9 +109,12 @@ struct ProBierWidget: Widget {
             provider: Provider()
         ) { entry in
             ProBierWidgetEntryView(entry: entry)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color("WidgetBackground"))
         }
         .configurationDisplayName("ProBier")
         .description("This shows a random beer per day.")
+        .supportedFamilies([.systemSmall])
     }
 }
 
@@ -117,7 +124,8 @@ struct ProBierWidget_Previews: PreviewProvider {
             ProBierWidgetEntryView(entry: .init(
                 date: .now,
                 url: "https://images.punkapi.com/v2/227.png",
-                name: "Pilsen")
+                name: "Pilsen",
+                id: "4")
             )
         }
         .previewContext(WidgetPreviewContext(family: .systemSmall))
