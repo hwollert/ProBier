@@ -14,27 +14,7 @@ struct BeerPreview: View {
     
     var body: some View {
         HStack {
-            AsyncImage(url: URL(string: beer.image_url ?? "")) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .animation(.easeInOut(duration: 1.0), value: animationAmount)
-                    .opacity(animationAmount)
-                    .padding(3)
-            } placeholder: {
-                Image(systemName: "bubbles.and.sparkles")
-                    .font(.system(size: 40))
-                    .opacity(animationAmount + 0.3)
-                    .animation(
-                        .easeInOut(duration: 2)
-                        .repeatForever(autoreverses: true),
-                        value: animationAmount
-                    )
-            }
-            .frame(width: 80, height: 80)
-            .background(Color("LightGrayColor"))
-            .cornerRadius(8.0)
-            .padding(.trailing, 8)
+            BeerImage(beer: beer)
             VStack {
                 HStack {
                     Text(beer.name)

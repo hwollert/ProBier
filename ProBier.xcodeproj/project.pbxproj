@@ -67,6 +67,7 @@
 		1C68CBC22A62E7C70093DDEB /* ModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C68CBC12A62E7C70093DDEB /* ModelMapper.swift */; };
 		1C6D7EAF2A6337F800D41FF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C6D7EAE2A6337F800D41FF6 /* Assets.xcassets */; };
 		1C6D7EB12A641B0000D41FF6 /* BeerDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D7EB02A641B0000D41FF6 /* BeerDetailViewModel.swift */; };
+		1CFCFE762A69BB4000386FFD /* BeerImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFCFE752A69BB4000386FFD /* BeerImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +153,7 @@
 		1C6D7EAE2A6337F800D41FF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C6D7EB02A641B0000D41FF6 /* BeerDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailViewModel.swift; sourceTree = "<group>"; };
 		1C6D7EB42A643A8700D41FF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1CFCFE752A69BB4000386FFD /* BeerImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +302,7 @@
 				1C68CB102A60108F0093DDEB /* ContentView.swift */,
 				1C68CB4F2A6043700093DDEB /* BeerPreview.swift */,
 				1C68CB6B2A62B6EF0093DDEB /* StoredList.swift */,
+				1CFCFE752A69BB4000386FFD /* BeerImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				1C68CB642A61CD490093DDEB /* MethodModel.swift in Sources */,
 				1C68CB662A61CD5B0093DDEB /* IngredientsModel.swift in Sources */,
 				1C68CB3B2A601FF80093DDEB /* BeerManager.swift in Sources */,
+				1CFCFE762A69BB4000386FFD /* BeerImage.swift in Sources */,
 				1C68CB502A6043700093DDEB /* BeerPreview.swift in Sources */,
 				1C68CB682A62A17A0093DDEB /* ErrorType.swift in Sources */,
 				1C68CB0A2A60108F0093DDEB /* ProBierApp.swift in Sources */,
